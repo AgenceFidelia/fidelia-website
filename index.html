@@ -164,29 +164,26 @@ h1 em{font-style:normal;color:var(--orange)}
 }
 .phone-top{height:26px;background:var(--navy-deep);display:flex;align-items:flex-end;justify-content:center;padding-bottom:2px}
 .phone-top::after{content:'';width:68px;height:16px;background:#0d1630;border-radius:0 0 10px 10px}
-.phone-body{flex:1;background:linear-gradient(155deg,#0d1630 0%,#1a2655 100%);padding:16px 12px;display:flex;flex-direction:column;gap:10px}
-.p-logo{font-family:var(--fh);font-size:14px;font-weight:800;color:#fff}
-.p-logo span{color:var(--orange)}
-.p-sub{font-size:9px;color:rgba(255,255,255,.3);margin-top:-2px}
-.p-card{
-  background:linear-gradient(135deg,var(--orange) 0%,#f5923c 100%);
-  border-radius:12px;padding:12px;position:relative;overflow:hidden;
-}
-.p-card::after{content:'';position:absolute;right:-16px;top:-16px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.1)}
-.p-card-label{font-size:9px;color:rgba(255,255,255,.6);margin-bottom:1px}
-.p-card-name{font-family:var(--fh);font-size:13px;font-weight:700;color:#fff}
-.p-card-reward{font-size:9px;color:rgba(255,255,255,.5);margin-top:6px}
-.p-stamps{display:flex;gap:4px;flex-wrap:wrap}
-.stamp{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px}
-.stamp.on{background:var(--orange)}
-.stamp.off{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
-.p-notif{
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
-  border-radius:9px;padding:8px 10px;display:flex;align-items:center;gap:7px;
-}
-.p-n-ico{font-size:16px;flex-shrink:0}
-.p-n-title{font-size:9px;font-weight:500;color:rgba(255,255,255,.8)}
-.p-n-body{font-size:8px;color:rgba(255,255,255,.4);margin-top:1px}
+.phone-body{flex:1;background:var(--orange);padding:0;display:flex;flex-direction:column}
+/* Header carte */
+.p-card-header{padding:14px 14px 10px;display:flex;align-items:center}
+.p-card-logo-wrap{display:flex;align-items:center;gap:8px}
+.p-logo-text{font-family:var(--fh);font-size:15px;font-weight:800;color:var(--navy);line-height:1}
+.p-logo-sub{font-size:7px;color:var(--navy);opacity:.7;letter-spacing:.03em;line-height:1.2}
+/* Zone tampons */
+.p-stamps-zone{background:#f0f0f0;margin:0 0 0 0;padding:12px 10px}
+.p-stamps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.stamp-fidelia{width:100%;aspect-ratio:1/1;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff}
+.stamp-fidelia.on{background:#fff}
+.stamp-fidelia.off{background:#e0e0e0}
+/* Info row */
+.p-info-row{display:flex;justify-content:space-between;padding:10px 14px;gap:8px}
+.p-info-label{font-size:7px;font-weight:700;color:rgba(31,46,92,.7);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.p-info-val{font-size:13px;font-weight:500;color:var(--navy)}
+/* QR */
+.p-qr-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 14px 14px}
+.p-qr{background:#fff;border-radius:8px;padding:10px;display:flex;align-items:center;justify-content:center}
+.p-qr-label{font-size:9px;color:rgba(31,46,92,.6);margin-top:6px;font-style:italic}
 .float-badge{
   position:absolute;
   background:#fff;border:1px solid var(--border);
@@ -238,7 +235,7 @@ h2{font-family:var(--fh);font-size:clamp(28px,4vw,46px);font-weight:800;letter-s
 #features{background:var(--white)}
 .feat-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.feat-card{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:flex-start}
+.feat-card{min-height:220px;display:flex;flex-direction:column;justify-content:flex-start}
 .feat-card{
   background:var(--off-white);border:1px solid var(--border-soft);
   border-radius:var(--r);padding:26px;
@@ -438,24 +435,66 @@ footer{
       <div class="phone">
         <div class="phone-top"></div>
         <div class="phone-body">
-          <div><div class="p-logo">FIDELI<span>A</span></div><div class="p-sub">Ma carte de fidélité</div></div>
-          <div class="p-card">
-            <div class="p-card-label">Votre commerce</div>
-            <div class="p-card-name">Boulangerie du Marché</div>
-            <div class="p-card-reward">8 tampons = 1 café offert ☕</div>
+          <!-- Header carte -->
+          <div class="p-card-header">
+            <div class="p-card-logo-wrap">
+              <svg viewBox="150 0 350 400" width="28" height="28"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg>
+              <div>
+                <div class="p-logo-text">FIDELIA</div>
+                <div class="p-logo-sub">AGENCE DE FIDÉLITÉ DIGITALE</div>
+              </div>
+            </div>
           </div>
-          <div class="p-stamps">
-            <div class="stamp on">☕</div><div class="stamp on">☕</div><div class="stamp on">☕</div>
-            <div class="stamp on">☕</div><div class="stamp on">☕</div>
-            <div class="stamp off"></div><div class="stamp off"></div><div class="stamp off"></div>
+          <!-- Zone tampons -->
+          <div class="p-stamps-zone">
+            <div class="p-stamps-grid">
+              <!-- Ligne 1 : 3 actifs + 2 inactifs -->
+              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
+              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
+              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <!-- Ligne 2 : 5 inactifs -->
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
+            </div>
           </div>
-          <div class="p-notif">
-            <div class="p-n-ico">🔔</div>
-            <div><div class="p-n-title">Encore 3 tampons pour votre cadeau !</div><div class="p-n-body">Revenez nous voir bientôt 😊</div></div>
+          <!-- Infos client -->
+          <div class="p-info-row">
+            <div><div class="p-info-label">RÉCOMPENSES</div><div class="p-info-val">0 récompenses</div></div>
+            <div><div class="p-info-label">PRÉNOM</div><div class="p-info-val">Clement</div></div>
           </div>
-          <div class="p-notif">
-            <div class="p-n-ico">⭐</div>
-            <div><div class="p-n-title">Laissez-nous un avis Google</div><div class="p-n-body">Lien direct vers notre fiche !</div></div>
+          <!-- QR code simulé -->
+          <div class="p-qr-wrap">
+            <div class="p-qr">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <!-- coins QR -->
+                <rect x="5" y="5" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+                <rect x="12" y="12" width="16" height="16" rx="1" fill="#111"/>
+                <rect x="65" y="5" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+                <rect x="72" y="12" width="16" height="16" rx="1" fill="#111"/>
+                <rect x="5" y="65" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+                <rect x="12" y="72" width="16" height="16" rx="1" fill="#111"/>
+                <!-- points data simulés -->
+                <rect x="40" y="5" width="5" height="5" fill="#111"/><rect x="50" y="5" width="5" height="5" fill="#111"/><rect x="60" y="5" width="5" height="5" fill="#111"/>
+                <rect x="40" y="15" width="5" height="5" fill="#111"/><rect x="55" y="15" width="5" height="5" fill="#111"/>
+                <rect x="45" y="25" width="5" height="5" fill="#111"/><rect x="55" y="25" width="5" height="5" fill="#111"/>
+                <rect x="40" y="40" width="5" height="5" fill="#111"/><rect x="50" y="40" width="5" height="5" fill="#111"/><rect x="60" y="40" width="5" height="5" fill="#111"/>
+                <rect x="5" y="40" width="5" height="5" fill="#111"/><rect x="15" y="40" width="5" height="5" fill="#111"/><rect x="25" y="40" width="5" height="5" fill="#111"/>
+                <rect x="40" y="50" width="5" height="5" fill="#111"/><rect x="55" y="50" width="5" height="5" fill="#111"/>
+                <rect x="5" y="50" width="5" height="5" fill="#111"/><rect x="20" y="50" width="5" height="5" fill="#111"/><rect x="30" y="50" width="5" height="5" fill="#111"/>
+                <rect x="45" y="60" width="5" height="5" fill="#111"/><rect x="60" y="60" width="5" height="5" fill="#111"/>
+                <rect x="40" y="70" width="5" height="5" fill="#111"/><rect x="50" y="70" width="5" height="5" fill="#111"/>
+                <rect x="40" y="80" width="5" height="5" fill="#111"/><rect x="55" y="80" width="5" height="5" fill="#111"/><rect x="65" y="80" width="5" height="5" fill="#111"/>
+                <rect x="70" y="60" width="5" height="5" fill="#111"/><rect x="80" y="65" width="5" height="5" fill="#111"/>
+                <rect x="75" y="75" width="5" height="5" fill="#111"/><rect x="85" y="80" width="5" height="5" fill="#111"/>
+                <rect x="70" y="50" width="5" height="5" fill="#111"/><rect x="85" y="45" width="5" height="5" fill="#111"/>
+              </svg>
+            </div>
+            <div class="p-qr-label">Powered by Fidelia</div>
           </div>
         </div>
       </div>
