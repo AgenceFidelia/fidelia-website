@@ -153,7 +153,7 @@ h1 em{font-style:normal;color:var(--orange)}
 .stat-label{font-size:11px;color:rgba(255,255,255,.45);margin-top:4px;line-height:1.3;text-transform:uppercase;letter-spacing:.04em}
 
 /* PHONE MOCKUP */
-.phone-col{display:flex;justify-content:center;align-items:center;position:relative}
+.phone-col{display:flex;justify-content:center;align-items:flex-start;position:relative;padding-top:20px}
 .phone{
   width:248px;height:490px;
   background:#fff;border-radius:36px;
@@ -192,9 +192,9 @@ h1 em{font-style:normal;color:var(--orange)}
   font-size:11px;font-weight:500;white-space:nowrap;color:var(--ink);
   animation:floaty 3s ease-in-out infinite;z-index:3;
 }
-.fb1{left:-68px;top:100px;animation-delay:0s}
-.fb2{right:-58px;top:190px;animation-delay:1s}
-.fb3{left:-48px;bottom:120px;animation-delay:.6s}
+.fb1{left:-96px;top:120px;animation-delay:0s}
+.fb2{right:-103px;top:240px;animation-delay:1s}
+.fb3{left:-84px;bottom:160px;animation-delay:.6s}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px}
 .dot-g{background:#16A34A}.dot-o{background:var(--orange)}.dot-n{background:var(--navy)}
@@ -432,72 +432,115 @@ footer{
       </div>
     </div>
     <div class="phone-col">
-      <div class="phone">
-        <div class="phone-top"></div>
-        <div class="phone-body">
-          <!-- Header carte -->
-          <div class="p-card-header">
-            <div class="p-card-logo-wrap">
-              <svg viewBox="150 0 350 400" width="28" height="28"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg>
-              <div>
-                <div class="p-logo-text">FIDELIA</div>
-                <div class="p-logo-sub">AGENCE DE FIDÉLITÉ DIGITALE</div>
+      <div style="position:relative;width:240px;">
+
+        <!-- Ombre portée -->
+        <div style="position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);width:160px;height:24px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,0.35) 0%,transparent 70%);z-index:0;"></div>
+
+        <!-- Coque iPhone 15 Pro — titane brossé -->
+        <div style="position:relative;z-index:1;width:240px;height:520px;background:linear-gradient(165deg,#d4d0ca 0%,#b8b4ae 15%,#9c9892 30%,#c8c4be 45%,#a8a49e 60%,#bab6b0 75%,#ccc8c2 85%,#e0dcd6 100%);border-radius:46px;padding:3px;box-shadow:0 0 0 0.5px rgba(255,255,255,0.5),inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(0,0,0,0.2),2px 0 4px rgba(0,0,0,0.15),-1px 0 3px rgba(255,255,255,0.3),0 30px 60px rgba(0,0,0,0.4),0 10px 20px rgba(0,0,0,0.25);">
+
+          <!-- Bord intérieur sombre -->
+          <div style="width:100%;height:100%;border-radius:44px;background:#111;padding:4px;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8);overflow:hidden;position:relative;">
+
+            <!-- Reflet gauche -->
+            <div style="position:absolute;left:0;top:80px;bottom:80px;width:3px;background:linear-gradient(180deg,transparent,rgba(255,255,255,0.5) 30%,rgba(255,255,255,0.65) 50%,rgba(255,255,255,0.3) 70%,transparent);border-radius:2px;z-index:5;"></div>
+            <!-- Reflet droit -->
+            <div style="position:absolute;right:0;top:100px;bottom:100px;width:2px;background:linear-gradient(180deg,transparent,rgba(255,255,255,0.2) 40%,rgba(255,255,255,0.35) 55%,rgba(255,255,255,0.15) 70%,transparent);border-radius:2px;z-index:5;"></div>
+
+            <!-- Bouton silencieux -->
+            <div style="position:absolute;left:-4px;top:88px;width:4px;height:26px;background:linear-gradient(90deg,#888,#b0aca6,#888);border-radius:3px 0 0 3px;box-shadow:-1px 0 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.3);z-index:5;"></div>
+            <!-- Volume + -->
+            <div style="position:absolute;left:-4px;top:130px;width:4px;height:48px;background:linear-gradient(90deg,#888,#b0aca6,#888);border-radius:3px 0 0 3px;box-shadow:-1px 0 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.3);z-index:5;"></div>
+            <!-- Volume - -->
+            <div style="position:absolute;left:-4px;top:192px;width:4px;height:48px;background:linear-gradient(90deg,#888,#b0aca6,#888);border-radius:3px 0 0 3px;box-shadow:-1px 0 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.3);z-index:5;"></div>
+            <!-- Power -->
+            <div style="position:absolute;right:-4px;top:148px;width:4px;height:68px;background:linear-gradient(90deg,#b0aca6,#ccc8c2,#b0aca6);border-radius:0 3px 3px 0;box-shadow:1px 0 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.4);z-index:5;"></div>
+
+            <!-- Écran -->
+            <div style="background:#fff;border-radius:40px;overflow:hidden;width:100%;height:100%;display:flex;flex-direction:column;">
+
+              <!-- Dynamic Island -->
+              <div style="background:#000;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                <div style="background:#000;width:100px;height:28px;border-radius:0 0 18px 18px;box-shadow:0 4px 8px rgba(0,0,0,0.5);position:relative;">
+                  <div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:#1a1a1a;border:1.5px solid #222;"></div>
+                </div>
               </div>
+
+              <!-- Carte FIDELIA fond orange -->
+              <div style="background:#EE7A2A;flex:1;display:flex;flex-direction:column;overflow:hidden;">
+
+                <!-- Logo -->
+                <div style="padding:12px 14px 8px;display:flex;align-items:center;gap:9px;flex-shrink:0;">
+                  <svg viewBox="150 0 350 400" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg>
+                  <div>
+                    <div style="font-family:Arial,sans-serif;font-weight:800;font-size:16px;color:#1F2E5C;letter-spacing:.5px;line-height:1;">FIDELIA</div>
+                    <div style="font-size:6.5px;color:#1F2E5C;opacity:.75;letter-spacing:.05em;line-height:1.3;">AGENCE DE FIDÉLITÉ DIGITALE - LA ROCHELLE</div>
+                  </div>
+                </div>
+
+                <!-- Tampons -->
+                <div style="background:#EBEBEB;padding:11px 10px;flex-shrink:0;">
+                  <div style="display:flex;gap:6px;margin-bottom:6px;justify-content:center;">
+                    <div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div>
+                  </div>
+                  <div style="display:flex;gap:6px;justify-content:center;">
+                    <div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div><div style="width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="150 0 350 400" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#ccc"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#ccc" stroke-linecap="round" stroke-width="19"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#ccc"/></g></svg></div>
+                  </div>
+                </div>
+
+                <!-- Infos -->
+                <div style="display:flex;justify-content:space-between;padding:10px 14px;flex-shrink:0;">
+                  <div>
+                    <div style="font-size:8px;font-weight:700;color:rgba(31,46,92,0.65);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Récompenses disponibles</div>
+                    <div style="font-size:14px;font-weight:500;color:#1F2E5C;">0 récompenses</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div style="font-size:8px;font-weight:700;color:rgba(31,46,92,0.65);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Prénom</div>
+                    <div style="font-size:14px;font-weight:700;color:#1F2E5C;letter-spacing:.5px;">FIDELIA</div>
+                  </div>
+                </div>
+
+                <!-- QR code -->
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px 14px 14px;">
+                  <div style="background:#fff;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+                    <svg viewBox="0 0 90 90" width="96" height="96" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="26" height="26" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+  <rect x="10" y="10" width="14" height="14" rx="1" fill="#111"/>
+  <rect x="60" y="4" width="26" height="26" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+  <rect x="66" y="10" width="14" height="14" rx="1" fill="#111"/>
+  <rect x="4" y="60" width="26" height="26" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+  <rect x="10" y="66" width="14" height="14" rx="1" fill="#111"/>
+  <rect x="38" y="4" width="4" height="4" fill="#111"/><rect x="46" y="4" width="4" height="4" fill="#111"/><rect x="54" y="8" width="4" height="4" fill="#111"/>
+  <rect x="38" y="12" width="4" height="4" fill="#111"/><rect x="50" y="12" width="4" height="4" fill="#111"/><rect x="46" y="20" width="4" height="4" fill="#111"/><rect x="54" y="16" width="4" height="4" fill="#111"/>
+  <rect x="4" y="38" width="4" height="4" fill="#111"/><rect x="12" y="38" width="4" height="4" fill="#111"/><rect x="24" y="38" width="4" height="4" fill="#111"/>
+  <rect x="38" y="38" width="4" height="4" fill="#111"/><rect x="46" y="38" width="4" height="4" fill="#111"/><rect x="58" y="38" width="4" height="4" fill="#111"/><rect x="66" y="38" width="4" height="4" fill="#111"/><rect x="78" y="38" width="4" height="4" fill="#111"/>
+  <rect x="4" y="46" width="4" height="4" fill="#111"/><rect x="20" y="46" width="4" height="4" fill="#111"/><rect x="42" y="46" width="4" height="4" fill="#111"/><rect x="54" y="46" width="4" height="4" fill="#111"/><rect x="70" y="46" width="4" height="4" fill="#111"/><rect x="82" y="46" width="4" height="4" fill="#111"/>
+  <rect x="38" y="54" width="4" height="4" fill="#111"/><rect x="50" y="54" width="4" height="4" fill="#111"/><rect x="62" y="54" width="4" height="4" fill="#111"/>
+  <rect x="38" y="62" width="4" height="4" fill="#111"/><rect x="46" y="70" width="4" height="4" fill="#111"/><rect x="58" y="66" width="4" height="4" fill="#111"/>
+  <rect x="66" y="62" width="4" height="4" fill="#111"/><rect x="74" y="70" width="4" height="4" fill="#111"/><rect x="82" y="62" width="4" height="4" fill="#111"/>
+  <rect x="70" y="78" width="4" height="4" fill="#111"/><rect x="82" y="82" width="4" height="4" fill="#111"/><rect x="46" y="82" width="4" height="4" fill="#111"/>
+</svg>
+                    <div style="font-size:10px;color:#888;font-style:italic;letter-spacing:.03em;">Powered by Fidelia</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Home bar -->
+              <div style="background:#fff;height:26px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                <div style="width:80px;height:4px;background:#1a1a1a;border-radius:2px;opacity:.2;"></div>
+              </div>
+
             </div>
-          </div>
-          <!-- Zone tampons -->
-          <div class="p-stamps-zone">
-            <div class="p-stamps-grid">
-              <!-- Ligne 1 : 3 actifs + 2 inactifs -->
-              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
-              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
-              <div class="stamp-fidelia on"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="#EE7A2A"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="#EE7A2A" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="#1F2E5C"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <!-- Ligne 2 : 5 inactifs -->
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-              <div class="stamp-fidelia off"><svg viewBox="150 0 350 400" width="16" height="16"><g transform="translate(150,0)"><path d="M 240.52 177.40 A 149 149 0 1 1 321.86 312.76 A 149 149 0 0 1 343.65 269.99 A 101 101 0 1 0 288.52 178.24 A 149 149 0 0 1 240.52 177.40 Z" fill="rgba(150,150,150,0.4)"/><path d="M 408.5 161 A 19 19 0 0 1 408.5 199" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 452.5 137 A 63 63 0 0 1 452.5 223" fill="none" stroke="rgba(150,150,150,0.4)" stroke-linecap="round" stroke-width="6"/><path d="M 359.41 185.20 A 149 149 0 1 1 280.45 48.44 A 149 149 0 0 1 257.92 90.82 A 101 101 0 1 0 311.44 183.52 A 149 149 0 0 1 359.41 185.20 Z" fill="rgba(150,150,150,0.4)"/></g></svg></div>
-            </div>
-          </div>
-          <!-- Infos client -->
-          <div class="p-info-row">
-            <div><div class="p-info-label">RÉCOMPENSES</div><div class="p-info-val">0 récompenses</div></div>
-            <div><div class="p-info-label">PRÉNOM</div><div class="p-info-val">Clement</div></div>
-          </div>
-          <!-- QR code simulé -->
-          <div class="p-qr-wrap">
-            <div class="p-qr">
-              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-                <!-- coins QR -->
-                <rect x="5" y="5" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
-                <rect x="12" y="12" width="16" height="16" rx="1" fill="#111"/>
-                <rect x="65" y="5" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
-                <rect x="72" y="12" width="16" height="16" rx="1" fill="#111"/>
-                <rect x="5" y="65" width="30" height="30" rx="3" fill="none" stroke="#111" stroke-width="3"/>
-                <rect x="12" y="72" width="16" height="16" rx="1" fill="#111"/>
-                <!-- points data simulés -->
-                <rect x="40" y="5" width="5" height="5" fill="#111"/><rect x="50" y="5" width="5" height="5" fill="#111"/><rect x="60" y="5" width="5" height="5" fill="#111"/>
-                <rect x="40" y="15" width="5" height="5" fill="#111"/><rect x="55" y="15" width="5" height="5" fill="#111"/>
-                <rect x="45" y="25" width="5" height="5" fill="#111"/><rect x="55" y="25" width="5" height="5" fill="#111"/>
-                <rect x="40" y="40" width="5" height="5" fill="#111"/><rect x="50" y="40" width="5" height="5" fill="#111"/><rect x="60" y="40" width="5" height="5" fill="#111"/>
-                <rect x="5" y="40" width="5" height="5" fill="#111"/><rect x="15" y="40" width="5" height="5" fill="#111"/><rect x="25" y="40" width="5" height="5" fill="#111"/>
-                <rect x="40" y="50" width="5" height="5" fill="#111"/><rect x="55" y="50" width="5" height="5" fill="#111"/>
-                <rect x="5" y="50" width="5" height="5" fill="#111"/><rect x="20" y="50" width="5" height="5" fill="#111"/><rect x="30" y="50" width="5" height="5" fill="#111"/>
-                <rect x="45" y="60" width="5" height="5" fill="#111"/><rect x="60" y="60" width="5" height="5" fill="#111"/>
-                <rect x="40" y="70" width="5" height="5" fill="#111"/><rect x="50" y="70" width="5" height="5" fill="#111"/>
-                <rect x="40" y="80" width="5" height="5" fill="#111"/><rect x="55" y="80" width="5" height="5" fill="#111"/><rect x="65" y="80" width="5" height="5" fill="#111"/>
-                <rect x="70" y="60" width="5" height="5" fill="#111"/><rect x="80" y="65" width="5" height="5" fill="#111"/>
-                <rect x="75" y="75" width="5" height="5" fill="#111"/><rect x="85" y="80" width="5" height="5" fill="#111"/>
-                <rect x="70" y="50" width="5" height="5" fill="#111"/><rect x="85" y="45" width="5" height="5" fill="#111"/>
-              </svg>
-            </div>
-            <div class="p-qr-label">Powered by Fidelia</div>
+
+            <!-- Reflet écran haut -->
+            <div style="position:absolute;top:7px;left:14px;right:14px;height:100px;background:linear-gradient(180deg,rgba(255,255,255,0.06) 0%,transparent 100%);border-radius:36px 36px 0 0;pointer-events:none;z-index:4;"></div>
+
           </div>
         </div>
       </div>
+
       <div class="float-badge fb1"><span class="dot dot-g"></span>Tampon ajouté (~10 sec)</div>
       <div class="float-badge fb2"><span class="dot dot-o"></span>Push envoyé à 87 clients</div>
       <div class="float-badge fb3"><span class="dot dot-n"></span>Avis Google reçu ⭐</div>
